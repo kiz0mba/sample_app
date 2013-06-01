@@ -1,7 +1,8 @@
 @import "bootstrap";
 
-/* universal */
+$grayMediumLight: #eaeaea;
 
+/* universal */
 html {
   overflow-y:scroll;
 } 
@@ -22,7 +23,7 @@ textarea {
   text-align: center;
   h1 {
     margin-bottom: 10px;
-   } 
+  } 
 } 
 
 
@@ -45,7 +46,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight:normal;
-  color: #999;
+  color: $grayLight;
 }
 
 p {
@@ -60,15 +61,14 @@ p {
    float: left;
    margin-right:10px;
    font-size: 1.7em;
-   color:#fff;
+   color:white;
    text-transform: uppercase;
    letter-spacing:-1px;
-   float: left;
    padding-top:9px;
    font-weight: bold;
    line-height: 1;
    &:hover {
-     color: #fff; /* Changes the color of the logo to white */
+     color: white; /* Changes the color of the logo to white */
      text-decoration: none;
    }
 }
@@ -78,27 +78,28 @@ p {
 /* footer */
 
 footer {
- margin-top: 45px;
- padding-top: 45px;
- border-top: 1 px solid #eaeaea; /* wtf */
- color: #999;
+  margin-top: 45px;
+  padding-top: 45px;
+  border-top: 1 px solid $grayMediumLight;
+  color: $grayLight;
+  a {
+    color: $gray;
+    &:hover {
+      color: $grayDarker;
+    }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
 }
 
-footer a {
- color: #555;
- &:hover {
-  color: #222;
- }
- small {
-  float: left;
- }
- ul {
- float: right;
- list-style: none;
- }
- li{
- float: left;
- margin-left: 10px;
- }
-}
+
+ 
 

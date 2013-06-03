@@ -3,7 +3,13 @@ FactoryGirl.define do
   factory :user do
     name  "Bugs Bunny"
     email "bb@rabbithole.com"
-    password "show_me_carrots"
+    password "show_me_the_carrots"
     password_confirmation "show_me_the_carrots"
+  end
+  factory :blank_password_user, Class: User do
+    name  "Bugs Bunny"
+    email "bb@rabbithole.com"
+    password ""
+    password_confirmation ""
   end
 end

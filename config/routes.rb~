@@ -5,7 +5,7 @@ SampleApp::Application.routes.draw do
 	
   match '/signup',	to: 'users#new'
   match '/signin',	to: 'sessions#new'
-  match '/signout/:id',	to: 'sessions#destroy', via: :delete
+  match '/signout',	to: 'sessions#destroy', via: :delete
   
   match '/help', to: 'static_pages#help'
 

@@ -11,7 +11,8 @@ class UsersController < ApplicationController
    @users = User.paginate(page: params[:page])
   end
   def show
-    @user = User.find(params[:id])	
+    @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page]) 	
   end
 
   def new
@@ -19,11 +20,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.find_by_email(params[:session][:email]) #Came from form
-    if user && user.authenticate(params[:session][:password])
-      sign_in user
+    @user = User.new(params[:user]) #Came from form
+    if @user.save
+      sign_in @user
       flash[:success] = "Welcome to the Sample App!"
-      redirect_back_or user
+      redirect_back_or @user
     else
       flash.now[:error] = 'Invalid email/password combination'
       render 'new'

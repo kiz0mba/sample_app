@@ -5,11 +5,14 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %> 
-     </h1>
+      </h1>
+    </section>
     <section>
+      <%= render 'follow_form' if signed_in? %>
+    </section>
   </aside class="span4">
   <div class="span8">
-    <% if @user.micropost.any? %>
+    <% if @user.microposts.any? %>
     <h3> Microposts (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
         <%=render @microposts %>
